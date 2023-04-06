@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Card = ({ name, username, id }) => {
@@ -8,6 +9,7 @@ const Card = ({ name, username, id }) => {
   }
 
   return (
+    <Link to={`detail/${id}`}>
     <div className="card">
         {/* En cada card deberan mostrar en name - username y el id */}
 
@@ -16,6 +18,7 @@ const Card = ({ name, username, id }) => {
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
         <button onClick={addFav} className="favButton">Add fav</button>
     </div>
+    </Link>
   );
 };
 

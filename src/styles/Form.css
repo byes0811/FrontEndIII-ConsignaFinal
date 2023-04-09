@@ -1,0 +1,72 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  max-width: 500px;
+}
+
+form {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin: 1rem 0;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+button[type="submit"] {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #006666;
+}
+
+.error-message {
+  display: block;
+  padding: 0.5rem;
+  background-color: yellow;
+  color: red;
+}
+
+.success-message {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}

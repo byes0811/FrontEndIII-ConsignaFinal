@@ -1,9 +1,10 @@
 import React from 'react';
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from '@testing-library/react';
 import Form from '../Components/Form';
 
 describe('Form', () => {
-  it('should render the form correctly', () => {
+  test('should render the form correctly', () => {
     render(<Form />);
     const nameInput = screen.getByLabelText('Nombre completo:');
     const emailInput = screen.getByLabelText('Email:');
@@ -13,7 +14,7 @@ describe('Form', () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  it('should show an error message when the form is submitted with invalid data', () => {
+  test('should show an error message when the form is submitted with invalid data', () => {
     render(<Form />);
     const nameInput = screen.getByLabelText('Nombre completo:');
     const emailInput = screen.getByLabelText('Email:');
@@ -26,7 +27,7 @@ describe('Form', () => {
     expect(screen.getByText('Por favor verifique su información nuevamente')).toBeInTheDocument();
   });
 
-  it("should show a success message when the form is submitted with valid data", () => {
+  test("should show a success message when the form is submitted with valid data", () => {
     render(<Form />);
     const nameInput = screen.getByLabelText(/nombre completo/i);
     const emailInput = screen.getByLabelText(/email/i);

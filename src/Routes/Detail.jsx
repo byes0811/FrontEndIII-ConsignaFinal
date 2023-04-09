@@ -8,15 +8,15 @@ const Detail = () => {
   const [singleDentist, setSingleDentist] = useState({});
   const paramsForDentist = useParams();
 
-  const getSingleDentist = async () => {
-    const data = await fetch("https://jsonplaceholder.typicode.com/users/" + paramsForDentist.id);
-    const json = await data.json();
-    setSingleDentist(json);
-  };
-
   useEffect(() => {
+    const getSingleDentist = async () => {
+      const data = await fetch("https://jsonplaceholder.typicode.com/users/" + paramsForDentist.id);
+      const json = await data.json();
+      setSingleDentist(json);
+    };
+  
     getSingleDentist();
-  }, []);
+  }, [paramsForDentist.id]);
 
   return (
     <>

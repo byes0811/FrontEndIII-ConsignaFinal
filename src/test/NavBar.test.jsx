@@ -1,4 +1,5 @@
 import React from 'react';
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
@@ -17,15 +18,15 @@ describe('Navbar', () => {
     );
   });
 
-  it('should render three links', () => {
+  test('should render three links', () => {
     expect(screen.getAllByRole('link')).toHaveLength(3);
   });
 
-  it('should render a button', () => {
+  test('should render a button', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
-  it('should change theme on button click', () => {
+  test('should change theme on button click', () => {
     fireEvent.click(screen.getByRole('button'));
     expect(context.dispatch).toHaveBeenCalledWith({
       type: 'SET_THEME',
